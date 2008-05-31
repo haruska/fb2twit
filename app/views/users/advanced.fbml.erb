@@ -1,0 +1,9 @@
+<% facebook_form_for :user, @user, :url => url_for(:action => 'update') do |f| %>
+  <fb:editor-custom label="Strip 'is' from beginning">
+    <input type="checkbox" id="post_validate" name="user[remove_is]" value="1" <% if @user.remove_is? %>checked="checked"<% end %> />
+    <input name="user[remove_is]" type="hidden" value="0" />
+  </fb:editor-custom>
+  <%= f.text_field :ignore, :label => 'ignore updates containing' %>
+  <%= f.text_field :pretext, :label => 'prepend text to twitter' %>
+  <%= f.buttons 'update' %>
+<% end %>

@@ -1,0 +1,14 @@
+# The api key, secret key, and canvas page name are required to get started
+# Tunnel configuration is only needed if you are going to use the facebooker:tunnel Rake tasks
+# Your callback url in Facebook should be set to http://public_host:public_port
+
+development:
+  api_key: test_api_key
+  secret_key: test_secret_key
+  canvas_page_name: fbtotwit-test
+  callback_url: http://haruska.dyndns.org:34567/
+production:
+  api_key: production_api_key
+  secret_key: production_secret_key
+  canvas_page_name: fbtotwit
+  callback_url:  http://fb2twit.haruska.com

@@ -1,0 +1,1 @@
+/usr/bin/mongrel_rails cluster::start -C /mnt/fb2twit/current/config/mongrel_cluster.yml

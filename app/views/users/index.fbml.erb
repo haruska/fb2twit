@@ -1,0 +1,11 @@
+<% facebook_form_for :user, @user, :url => url_for(:action => 'update') do |f| %>
+  <%= f.text_field :twitter_name, :label => 'Twitter Username' %>
+  <fb:editor-custom label="Twitter Password">
+    <input type="password" name="user[twitter_pass]" value="<%= @user.twitter_pass %>" />
+  </fb:editor-custom>
+  <%= f.buttons 'update' %>
+<% end %>
+
+<% if @user.bad_pass? %>
+  <p style="color: #F00;">*Your username and/or password are invalid.</p>
+<% end %>

@@ -1,0 +1,12 @@
+development:
+  adapter: mysql
+  database: fb2twit_development
+  timeout: 5000
+test:
+  adapter: mysql
+  database: fb2twit_test
+  timeout: 5000
+production:
+  adapter: mysql
+  database: fb2twit_production
+  timeout: 5000

@@ -1,0 +1,22 @@
+<fb:header>fb2twit</fb:header>
+
+<% fb_tabs do %>
+<%= fb_tab_item "Twitter Login", url_for(:action => 'index'), {:selected => (params[:action] == 'index')} %>
+<%= fb_tab_item "Advanced Options", url_for(:action => 'advanced'), {:selected => (params[:action] == 'advanced')} %>
+<% end %>
+
+<div align="center">
+  <br />
+  <h4>Check your Facebook status every five minutes and update Twitter when it changes.</h4>
+</div>
+
+<% unless flash[:notice].blank? %>
+  <fb:success message="<%= flash[:notice] %>" />
+<% end %>
+<% unless flash[:error].blank? %>
+  <fb:error message="<%= flash[:error] %>" />
+<% end %>
+
+<div style="margin-top: 20px;">
+  <%= yield %>
+</div>
