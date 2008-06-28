@@ -14,7 +14,7 @@ module Twitter
   
   def self.update_status(name, pass, status)
     url = URI.parse("http://#{CGI::escape(name)}:#{CGI::escape(pass)}@twitter.com/statuses/update.xml")
-    res = Net::HTTP.post_form(url, {'status' => status})
+    res = Net::HTTP.post_form(url, {'status' => status, 'source' => 'fb2twit'})
     case res.code_type.to_s
     when "Net::HTTPOK"
       :success
